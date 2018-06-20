@@ -48,14 +48,7 @@
         <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
-        <config-file parent="./application" target="AndroidManifest.xml">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:host="sbx00.herokuapp.com" android:scheme="https"/>
-            </intent-filter>
-        <config-file>
+
     </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
@@ -122,5 +115,12 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="cordova-plugin-inappbrowser" spec="~2.0.2" />
-
+    <custom-config-file parent="./application" target="AndroidManifest.xml">
+    <intent-filter>
+    <action android:name="android.intent.action.VIEW"/>
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE"/>
+    <data android:host="sbx00.herokuapp.com" android:scheme="https"/>
+    </intent-filter>
+    <custom-config-file>
 </widget>
